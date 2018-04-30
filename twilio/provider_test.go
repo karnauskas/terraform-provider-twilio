@@ -1,4 +1,4 @@
-package main
+package twilio
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 )
 
 func TestProvider(t *testing.T) {
-	if err := provider().(*schema.Provider).InternalValidate(); err != nil {
+	if err := Provider().(*schema.Provider).InternalValidate(); err != nil {
 		t.Fatalf("err: %s", err)
 	}
 }

@@ -1,4 +1,4 @@
-package main
+package twilio
 
 import (
 	"github.com/hashicorp/terraform/helper/schema"
@@ -7,7 +7,7 @@ import (
 	twilioc "github.com/tulip/twiliogo"
 )
 
-func provider() terraform.ResourceProvider {
+func Provider() terraform.ResourceProvider {
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
 			"account_sid": &schema.Schema{
