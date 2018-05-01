@@ -159,5 +159,8 @@ func resourcePhonenumber() *schema.Resource {
 		Read:   phonenumberRead,
 		Update: phonenumberUpdate,
 		Delete: phonenumberDelete,
+		Importer: &schema.ResourceImporter{
+			State: resourcePhonenumberImport,
+		},
 	}
 }
