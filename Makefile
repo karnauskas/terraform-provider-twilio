@@ -4,7 +4,7 @@ REPO:=$(shell git config --get remote.origin.url | perl -ne 'm{github.com[:/](.+
 VERSION=0.0.2
 
 build:
-	go build
+	go build -mod=vendor
 
 build_linux:
 	docker-machine start || true

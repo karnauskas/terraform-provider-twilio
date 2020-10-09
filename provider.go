@@ -1,14 +1,13 @@
 package main
 
 import (
-	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/hashicorp/terraform/terraform"
-
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	twilioc "github.com/tulip/twiliogo"
 )
 
-func provider() terraform.ResourceProvider {
-	return &schema.Provider{
+func provider() *schema.Provider {
+
+	provider := &schema.Provider{
 		Schema: map[string]*schema.Schema{
 			"account_sid": &schema.Schema{
 				Type:        schema.TypeString,
@@ -28,6 +27,8 @@ func provider() terraform.ResourceProvider {
 		},
 		ConfigureFunc: providerConfigure,
 	}
+
+	return provider
 }
 
 type twilioMeta struct {
